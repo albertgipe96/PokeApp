@@ -74,4 +74,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
+
+    // Timber - Logging
+    implementation("com.jakewharton.timber:timber:5.0.1")
 }
