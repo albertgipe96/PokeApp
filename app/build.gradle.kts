@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.googleGmsGoogleServices)
     id("kotlin-kapt")
     alias(libs.plugins.googleDaggerHiltAndroid)
+    alias(libs.plugins.googleFirebaseCrashlytics)
 }
 
 android {
