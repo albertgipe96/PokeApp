@@ -1,4 +1,4 @@
-package com.example.pokeapp.ui.theme
+package com.example.pokeapp.ui.common.theme
 
 import android.app.Activity
 import android.os.Build
