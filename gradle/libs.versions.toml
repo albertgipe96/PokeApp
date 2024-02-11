@@ -10,7 +10,6 @@ activityCompose = "1.7.0"
 composeBom = "2023.08.00"
 startupRuntime = "1.1.1"
 googleServicesPlugin = "4.4.1"
-daggerHiltPlugin = "2.44"
 googleCrashlyticsPlugin = "2.9.9"
 
 [libraries]
@@ -34,6 +33,5 @@ androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" }
-googleDaggerHiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "daggerHiltPlugin" }
 googleFirebaseCrashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleCrashlyticsPlugin" }
 

@@ -4,5 +4,5 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
     alias(libs.plugins.googleGmsGoogleServices) apply false
     alias(libs.plugins.googleFirebaseCrashlytics) apply false
-    alias(libs.plugins.googleDaggerHiltAndroid) apply false
+    id("com.google.dagger.hilt.android") version("2.50") apply false
 }

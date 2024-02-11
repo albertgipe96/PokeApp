@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleGmsGoogleServices)
     id("kotlin-kapt")
-    alias(libs.plugins.googleDaggerHiltAndroid)
+    id("dagger.hilt.android.plugin")
     alias(libs.plugins.googleFirebaseCrashlytics)
 }
 
@@ -41,6 +41,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -83,14 +84,17 @@ dependencies {
 
     // Hilt
     // Dependency Injection
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
-    implementation("androidx.hilt:hilt-work:1.0.0")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
-    implementation("androidx.work:work-runtime-ktx:2.8.0")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    val lifecycle_version = "2.6.0-alpha05"
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version")
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
+    implementation("androidx.hilt:hilt-work:1.1.0")
+    kapt("androidx.hilt:hilt-compiler:1.1.0")
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 }
