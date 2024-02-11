@@ -4,8 +4,11 @@ import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +20,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.pokeapp.common.ui.navigation.AppNavigator
+import com.example.pokeapp.common.ui.navigation.BottomNavigationBar
 import com.example.pokeapp.common.ui.navigation.Destination
 import com.example.pokeapp.common.ui.navigation.NavHost
 import com.example.pokeapp.common.ui.navigation.NavigationIntent
@@ -51,11 +55,13 @@ fun MainScreen() {
         navHostController = navController
     )
     PokeAppTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            NavHost(navController = navController, startDestination = Destination.HomeScreen) {
+        Scaffold(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.background),
+            bottomBar = { BottomNavigationBar(navController = navController) }
+        ) { paddingValues ->
+            NavHost(navController = navController, startDestination = Destination.HomeScreen, modifier = Modifier.padding(paddingValues)) {
                 composable(destination = Destination.HomeScreen) {
                     PokemonListScreen()
                 }
