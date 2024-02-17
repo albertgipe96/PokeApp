@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pokeapp.common.ui.navigation.AppNavigator
 import com.example.pokeapp.common.ui.navigation.Destination
+import com.example.pokeapp.common.ui.state.ViewStateDelegate
+import com.example.pokeapp.common.ui.state.ViewStateDelegateImpl
 import com.example.pokeapp.pokemons.domain.useCases.GetAllPokemonsUseCase
 import com.example.pokeapp.pokemons.ui.model.UiPokemon
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,15 +17,12 @@ import javax.inject.Inject
 class PokemonListViewModel @Inject constructor(
     private val appNavigator: AppNavigator,
     private val getAllPokemonsUseCase: GetAllPokemonsUseCase
-) : ViewModel() {
-
-    val pokemonList: List<UiPokemon>
-        get() = _pokemonList.value
-    private val _pokemonList = mutableStateOf(emptyList<UiPokemon>())
+) : ViewModel(), ViewStateDelegate<PokemonListUiState> by ViewStateDelegateImpl(PokemonListUiState.Loading) {
 
     init {
         viewModelScope.launch {
-            _pokemonList.value = getAllPokemonsUseCase()
+            val pokemonList = getAllPokemonsUseCase()
+            reduce { PokemonListUiState.Loaded(pokemonList) }
         }
     }
 
