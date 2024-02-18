@@ -18,6 +18,9 @@ val neutral_200 = Color(0xFFD3D3D3)
 val neutral_100 = Color(0xFFF5F3F4)
 val white = Color(0xFFFFFFFF)
 
+// Surface colors
+val Background = Color(0xFFF5F5F5)
+
 // Primary colors
 val red_900 = Color(0xFF660708)
 val red_300 = Color(0xFFA4161A)
