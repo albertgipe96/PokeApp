@@ -104,6 +104,10 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
+    // Paging
+    implementation("androidx.paging:paging-runtime:3.2.1")
+    implementation("androidx.paging:paging-compose:3.2.1")
+
     // Coil
     implementation("io.coil-kt:coil-compose:2.5.0")
 }
