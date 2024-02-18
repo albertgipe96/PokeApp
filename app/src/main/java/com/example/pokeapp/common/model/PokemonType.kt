@@ -21,7 +21,7 @@ import com.example.pokeapp.ui.theme.TypeRock
 import com.example.pokeapp.ui.theme.TypeSteel
 import com.example.pokeapp.ui.theme.TypeWater
 
-enum class Type(val icon: Icons, val color: Color) {
+enum class PokemonType(val icon: Icons, val color: Color) {
     BUG(icon = Icons.TYPE_BUG, color = TypeBug),
     DARK(icon = Icons.TYPE_DARK, color = TypeDark),
     DRAGON(icon = Icons.TYPE_DRAGON, color = TypeDragon),

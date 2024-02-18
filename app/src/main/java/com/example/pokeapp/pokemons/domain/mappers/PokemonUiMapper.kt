@@ -8,7 +8,10 @@ class PokemonUiMapper @Inject constructor() {
 
     fun Pokemon.toUiPokemon(): UiPokemon {
         return UiPokemon(
-            name = name
+            id = id,
+            name = name,
+            frontDefaultUrl = frontDefaultUrl,
+            types = types
         )
     }
 

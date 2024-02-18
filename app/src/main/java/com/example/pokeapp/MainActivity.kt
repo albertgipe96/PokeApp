@@ -27,7 +27,7 @@ import com.example.pokeapp.common.ui.navigation.NavigationIntent
 import com.example.pokeapp.common.ui.navigation.composable
 import com.example.pokeapp.pokemons.ui.screens.PokemonDetailScreen
 import com.example.pokeapp.pokemons.ui.screens.PokemonListScreen
-import com.example.pokeapp.ui.common.theme.PokeAppTheme
+import com.example.pokeapp.ui.theme.PokeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.BufferOverflow
