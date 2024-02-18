@@ -26,8 +26,8 @@ class PokemonListViewModel @Inject constructor(
         }
     }
 
-    fun navigateToPokemonDetail(id: String) {
-        appNavigator.tryNavigateTo(Destination.PokemonDetailScreen(id))
+    fun navigateToPokemonDetail(id: Int) {
+        appNavigator.tryNavigateTo(Destination.PokemonDetailScreen(id.toString()))
     }
 
 }
